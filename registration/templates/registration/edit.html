@@ -1,0 +1,22 @@
+{% extends 'main/base.html' %}
+
+
+{% block title %}
+Modification
+{% endblock title %}
+
+
+{% block content %}
+    <div id="header3">
+        <h1>Modification du profile: {{ user.username }}</h1>   
+
+        <form action="" method="POST">
+            {% csrf_token %} 
+            {{form.as_p}}
+            
+            <input type="submit" id="truc" name="submit">
+        </form>
+        
+    <div>
+    
+{% endblock %}

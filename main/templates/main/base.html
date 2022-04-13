@@ -1,0 +1,15 @@
+
+{% load static %}
+<html>
+    <head>
+        <title>{% block title %}Reborn{% endblock %}</title>
+        <link rel="stylesheet" type="text/css" href="{% static '/css/main.css' %}">
+       
+    </head>
+    <body>
+        {% include 'main/navbar.html' %}
+        {% block content%}
+        <p>base template</p>
+        {% endblock %}
+    </body>
+</html>

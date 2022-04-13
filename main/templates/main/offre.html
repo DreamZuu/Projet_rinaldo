@@ -1,0 +1,43 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+    <div id="search-field">
+        <form action="{% url 'offre' %} ">
+            <input class="s_offre" type="search" placeholder="Rechercher" name="search">
+            <button class="btn" type="submit"> Rechercher</button>
+        </form> 
+    </div>
+    
+    {% for offres in offre %}
+        {% if not offres.is_archived %}
+        <div id"container-offre">
+            <table id="offre">
+                <tr>
+                    <td>Nom de l'offre:</td>
+                    <td>{{ offres.nom }}</td>
+                </tr>
+                <tr>
+                    <td>Date de début:</td>
+                    <td>{{ offres.datedebut }}</td>
+                </tr>
+                <tr>
+                    <td>Type de l'offre:</td>
+                    <td>{{ offres.typeoffre }}</td>
+                </tr>
+                <tr>
+                    <td>Date de fin:</td>
+                    <td>{{ offres.typeoffre }}</td>
+                </tr>
+                <tr>
+                    <td>Proposé par:</td>
+                    <td>{{ offres.auteur }}</td>
+                </tr>
+                <tr>
+                    <td colspan="2"><a href="{% url 'detailOffre' offres.id %}">Voir l'offre</a></td>
+                </tr>
+            </table>    
+        </div>
+        {% endif %}
+    {% endfor %}
+    </table>
+{% endblock %}

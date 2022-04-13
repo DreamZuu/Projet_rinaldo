@@ -1,0 +1,18 @@
+{% extends 'main/base.html' %}
+
+
+{% block title %}
+Modification
+{% endblock title %}
+
+
+{% block content %}
+    <h1>Modification d'une offre: {{ user.username }}</h1>   
+
+    <form action="" method="POST">
+        {% csrf_token %} 
+        {{form}}
+        <input type="submit" name="submit">
+    </form>
+    
+{% endblock %}

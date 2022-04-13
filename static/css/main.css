@@ -1,0 +1,176 @@
+html{
+	width: 100%;
+	height: 100%;
+}
+
+body{
+	width: 100%;
+	height: 100%;
+	margin: 10px 0 ;
+	padding: 0 ;
+	text-align:left;
+	font: 0.8em "Trebuchet MS", helvetica, sans-serif ;
+	/* background-color: rgb(196, 44, 44) ; */
+	/* background: linear-gradient(yellow,red, blue); */
+	background:
+	linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%),
+    linear-gradient(127deg, rgba(0, 72, 255, 0.8), rgba(0,255,0,0) 70.71%),
+    linear-gradient(336deg, rgba(255, 213, 0, 0.8), rgba(0,0,255,0) 70.71%);
+	
+}
+
+
+#menu{
+	background-color: rgba(255, 255, 255, 0.315);
+	margin:0px;;
+	height: 60px;
+	border-bottom-color: black;
+	/* border-style:solid; */
+	width: 100%;
+	margin-top: 0px;
+}
+nav{
+    width: 100%;
+    margin:0 auto;
+    background-color: white;
+    position: fixed;
+    top: 0px;
+}
+nav a{
+    display: block;
+    text-decoration: none;
+    color: black;
+    border-bottom: 2px solid transparent;
+    padding: 10px 10px;
+}
+nav ul{
+    list-style-type: none;
+}
+nav li{
+    float: left;
+    width: 15%;
+    text-align: center;
+}
+nav a:hover{
+    color: purple;
+    border-bottom: 2px solid purple;
+}
+
+#header{
+	z-index: 1;
+	background-color: rgb(255, 255, 255);
+	margin: 0px;
+	margin-top: 0px;
+	width: 100%;
+	height: 300px;
+	border: 0px solid white;
+	position:absolute;
+}
+
+img {
+    border-bottom: 5px solid purple;
+
+    max-width: 100%;
+	height: auto;
+    background-repeat: no-repeat;
+}
+
+#about_site{
+    border-left: 2px solid purple;
+    border-bottom: 2px solid purple;
+    border-top: 10px transparent;
+    margin: 0 auto;
+    background-color: white;
+    width: 75%;
+    margin-top: 5%;
+}
+
+#offre{
+    border: 2px solid purple;
+    width: 75%; 
+    background-color: white;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+}
+
+td, tr
+{
+    border: 2px solid black;
+}
+#search-field{
+    text-align: center;
+}
+.s_offre{
+    width: 50%;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  padding: 12px 20px 12px 40px;
+}
+.btn{
+    /* background-color: rgb(255, 0, 0); */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    /* cursor: pointer; */
+    
+}
+
+#truc{
+
+    display:block;
+    color: white;
+    background-color: red;
+    margin-left: 40%;
+
+}
+
+p{
+    text-align: center;
+}
+
+#header{
+    display: block;
+    margin-left: 40%;
+    margin-right: 25%;
+    text-align: center;
+    width: 300px;
+    height: 400px;
+    background-color: white;
+
+}
+#header2{
+    margin-top: 200px;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    /* background-color: white; */
+}
+
+#header3{
+    margin-left: 40%;
+    margin-right: 25%;
+    text-align: center;
+    width: 350px;
+    height:400px;
+    background-color: white;
+}
+#div2{
+    text-align: center;
+    /* margin-left: 30%; */
+}
+
+#header4{
+    margin-left: 40%;
+    margin-right: 25%;
+    text-align: center;
+    width: 300px;
+    height: 300px;
+    background-color: white;
+}

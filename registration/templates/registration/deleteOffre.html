@@ -1,0 +1,11 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<p> sur de supprimer? {{myoffre}} </p>
+
+<form method="post" action="{% url 'supprimerOffre' myoffre.id %}">
+    {% csrf_token %}
+    <a href="{% url 'index' %}"> Cancel </a>
+    <input type="submit" name="Confirmer">
+
+{% endblock content %}

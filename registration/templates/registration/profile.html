@@ -1,0 +1,40 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+{% url 'edit' as edit_url %}
+{% url 'upload' as upload_url %}
+{% url 'mesoffres' as mesoffres_url %}
+    <div id="header">
+        <h1>{{ user.username}}'s profile</h1>
+
+        <p>{{ user.name }}</p>
+        <h4>Descriptif de votre profil:</h4>
+        <p>{{ user.profile.description }}</p>
+
+        <h4>Statut:</h4>
+        {% if not user.profile.isCE %}Vous êtes Etudiant {% else %}Vous êtes contact Entreprise{% endif %}
+        
+        <h4>Votre site personnel:</h4>
+        <p>{{ user.profile.site }}</p>
+        <h4>Votre adresse mail:</h4>
+        <p>{{ user.email }}</p>
+       
+        {% if user.profile.isCE %}
+        <div id="div2">
+            <span class="btn">
+                <a href="{{mesoffres_url}}"><button id="truc">Ajouter une offre</button></a>
+            </span>
+        {% endif %}
+            <span class="btn">
+                <a href="{{edit_url}}"><button id="truc">Modifier le profil</button></a>
+            </span>
+            <span class="btn">
+                <a href="{{upload_url}}"><button id="truc">Mettre un CV</button></a>
+            </span>
+        {% if url %}
+            <p>fichier téléchargé : <a href="{{ url }}">Voir</a></p>
+        {% endif %}
+        </div>
+    </div>
+{% endblock %}
+

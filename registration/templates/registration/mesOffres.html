@@ -1,0 +1,52 @@
+{% extends 'main/base.html' %}
+
+
+{% block title %}
+Modification
+{% endblock title %}
+
+
+{% block content %}
+    <!--_______________Ajout d'une offre par l'uitilisateur _______________-->
+    <h1>Ajouter une offre: {{ user.username }}</h1>   
+    <form method="POST" action="">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit"> Ajouter</button>
+    </form>
+
+    <!--_______________Listing des offres faites par l'uitilisateur _______________-->
+    <h1>Mes offres ({{ mynboffre }})</h1>   
+    {% for myoffre in alloffre %}
+        {% if not myoffre.is_archived %}
+        <div id"container-offre">
+            <table id="offre">
+                <tr>
+                    <td>Nom de l'offre:</td>
+                    <td>{{ myoffre.nom }}</td>
+                </tr>
+                <tr>
+                    <td>Date de début:</td>
+                    <td>{{ myoffre.datedebut }}</td>
+                </tr>
+                <tr>
+                    <td>Type de l'offre:</td>
+                    <td>{{ myoffre.typeoffre }}</td>
+                </tr>
+                <tr>
+                    <td>Date de fin:</td>
+                    <td>{{ myoffre.datefin }}</td>
+                </tr>
+                <tr>
+                    <td>Proposé par:</td>
+                    <td>{{ myoffre.auteur }}</td>
+                </tr>
+                <tr>
+                    <td><a href="{% url 'modifierOffre' myoffre.id %}">Modifier l'offre</a></td>
+                    <td><a href="{% url 'supprimerOffre' myoffre.id %}">supprimer l'offre</a></td>
+                </tr>
+            </table>    
+        </div>
+        {% endif %}
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,37 @@
+<div id="menu">
+    <nav>
+
+    
+        <ul>
+        {% url 'index' as index_url %}
+
+        <li>{% if request.path == index_url %}Acceuil{% else%}<a href="{{ index_url }}">Acceuil</a></li>{% endif %}
+
+        {% url 'offre' as offre_url %}
+        <li>{% if request.path == offre_url %}Rechercher une offre{% else%}<a href="{{ offre_url }}">Rechercher une offre</a></li>{% endif %}
+
+        {% url 'contact' as contact_url %}
+        <li>{% if request.path == contact_url %}Contact{% else%}<a href="{{ contact_url }}">Contact</a></li>{% endif %}
+
+        {% url 'about' as about_url %}
+        <li>{% if request.path == about_url %}A propos{% else%}<a href="{{ about_url }}">A propos</a></li>{% endif %}
+        <div >
+        <ul id="menu-right-side">
+            {% url 'logout' as logout_url %}
+            {% url 'login' as login_url %}
+            {% url 'profile' as profile_url %}
+            {% url 'signup' as signup_url %}
+
+            {% if user.is_authenticated %}
+                
+                <li>{% if request.path == profile_url %}{{user.username}}{% else%}<a href="{{ profile_url }}">Profil</a></li>{% endif %}
+                <li><a href="{{logout_url}}">Logout</a></li>
+            {% else %}
+            
+            <li>{% if request.path == login_url %}Login{% else%}<a href="{{ login_url }}">Login</a></li>{% endif %}
+            <li>{% if request.path == signup_url %}Sign up{% else%}<a href="{{ signup_url }}">Sign up</a></li>{% endif %}
+            {% endif %}
+        </ul>
+    </div>
+    </nav>
+</div>
